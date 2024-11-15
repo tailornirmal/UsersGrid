@@ -30,27 +30,24 @@ function Trow({ user }) {
         <p class="text-gray-900 whitespace-no-wrap">{user.ssn}</p>
       </td>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-xs">
-        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-          <span
-            aria-hidden
-            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-          ></span>
-          <span class="relative">Edit</span>
-        </span>
-        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-          <span
-            aria-hidden
-            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-          ></span>
-          <span class="relative">Delete</span>
-        </span>
-        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-          <span
-            aria-hidden
-            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-          ></span>
-          <span class="relative">View</span>
-        </span>
+        <button
+          type="button"
+          class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Edit
+        </button>
+        <button
+          type="button"
+          class="px-3 py-2 text-xs ml-1 font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Remove
+        </button>
+        <button
+          type="button"
+          class="px-3 py-2 text-xs ml-1 font-medium text-center text-white bg-green-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          View
+        </button>
       </td>
     </tr>
   );
