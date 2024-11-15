@@ -1,0 +1,14 @@
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  background-color: #ddd;
+  border-radius: 40px;
+}
+.alert-message {
+  padding: 25px 0px 0px 25px;
+}

@@ -1,6 +1,8 @@
-function Toast() {
+import './Toast.css';
+
+function Toast({ message }) {
   return (
-    <div><p>Hello Message</p></div>
+    <div className='alert'><span className='alert-message'>{message}</span></div>
   );
 }
 

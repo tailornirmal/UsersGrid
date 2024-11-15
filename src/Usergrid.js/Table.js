@@ -68,7 +68,7 @@ function Table() {
       <table class="min-w-full leading-normal">
         <Thead />
         {loading && <Loading />}
-        {toast && <Toast />}
+        {toast && <Toast message={`User has been deleted successfully.`} />}
         {isOpen && (
           <Modal
             setIsOpen={setIsOpen}
