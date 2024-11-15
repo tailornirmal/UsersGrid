@@ -1,4 +1,4 @@
-function Trow({ user }) {
+function Trow({ user, handleEdit }) {
   return (
     <tr key={user.id}>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-xs">
@@ -31,7 +31,9 @@ function Trow({ user }) {
       </td>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-xs">
         <button
+          onClick={(e) => handleEdit(e)}
           type="button"
+          id={user.id}
           class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Edit
