@@ -1,4 +1,4 @@
-function Trow({ user, handleEdit }) {
+function Trow({ user, handleEdit, handleDelete }) {
   return (
     <tr key={user.id}>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-xs">
@@ -31,7 +31,7 @@ function Trow({ user, handleEdit }) {
       </td>
       <td class="px-5 py-5 border-b border-gray-200 bg-white text-xs">
         <button
-          onClick={(e) => handleEdit(e)}
+          onClick={() => handleEdit(user.id)}
           type="button"
           id={user.id}
           class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -39,7 +39,9 @@ function Trow({ user, handleEdit }) {
           Edit
         </button>
         <button
+          onClick={() => handleDelete(user.id)}
           type="button"
+          id={user.id}
           class="px-3 py-2 text-xs ml-1 font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Remove
