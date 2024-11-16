@@ -1,14 +1,17 @@
 .alert {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 30%;
   width: 500px;
   height: 80px;
   margin-top: -40px;
   margin-left: -40px;
-  background-color: #ddd;
-  border-radius: 40px;
+  background-color: #2D2D2D;
+  border-radius: 20px;
+  color: #FFF;
+  text-align: center;
+  opacity: 0.8;
 }
 .alert-message {
-  padding: 25px 0px 0px 25px;
+  padding: 25px 0px 0px 25px !important;
 }

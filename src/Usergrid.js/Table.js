@@ -32,43 +32,42 @@ function Table() {
     fetchUsers();
   }, []);
 
-  function handleEdit(event) {
-    // console.log("table", e.target.id);
-    const { id } = event.target;
-    console.log("users", users);
-    console.log("id", id);
-    const filterSelectedUser = users.filter((e) => e.id == id);
-    console.log("filter", filterSelectedUser);
-    if (filterSelectedUser.length > 0 && id) {
+  function handleEdit(user) {
+    const filterSelectedUser = users.filter((e) => e.id === parseInt(user.id));
+    if (filterSelectedUser.length > 0 && user.id) {
       setSelectedUser(filterSelectedUser[0]);
       setIsOpen(true);
     }
   }
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (user) => {
     setLoading(true);
+    setShowToast(false);
     try {
-      await fetch(`https://dummyjson.com/users/${id}`, { method: "DELETE" });
+      await fetch(`https://dummyjson.com/users/${user.id}`, {
+        method: "DELETE",
+      });
     } catch (error) {
       console.error("Error deleting item:", error);
     } finally {
       setLoading(false);
-      const filterUsers = users.filter((e) => e.id !== parseInt(id));
+      const filterUsers = users.filter((e) => e.id !== parseInt(user.id));
       setUsers(filterUsers);
       setShowToast(true);
+      setSelectedUser(user);
     }
   };
 
-  function handleView() {}
-
-  console.log("selectedUser", selectedUser);
-
   return (
     <>
-      <table class="min-w-full leading-normal">
+      <table className="min-w-full leading-normal">
         <Thead />
         {loading && <Loading />}
-        {toast && <Toast message={`User has been deleted successfully.`} />}
+        {toast && (
+          <Toast
+            message={`User ${selectedUser.firstName} ${selectedUser.lastName} has been deleted successfully.`}
+          />
+        )}
         {isOpen && (
           <Modal
             setIsOpen={setIsOpen}
@@ -81,6 +80,7 @@ function Table() {
             users.map((user) => {
               return (
                 <Trow
+                  key={user.id}
                   user={user}
                   handleEdit={handleEdit}
                   handleDelete={handleDelete}
